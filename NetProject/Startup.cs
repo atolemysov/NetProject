@@ -21,7 +21,8 @@ namespace NetProject {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc(routes => {
+            app.UseMvc(routes =>
+            {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Main}/{action=Index}/{id?}");
