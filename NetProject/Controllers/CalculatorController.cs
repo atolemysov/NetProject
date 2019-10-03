@@ -9,11 +9,11 @@ namespace NetProject.Controllers
     [Route("[controller]/[action]")]
     public class CalculatorController : Controller {
         public CalculatorController() {
-            ViewData["action"] = RouteData.Values["action"].ToString();
         }
 
         [Route("{firstNumber:int}/{secondNumber:int}")]
         public IActionResult Sum(int firstNumber, int secondNumber) {
+            ViewData["action"] = RouteData.Values["action"].ToString();
             ViewData["mark"] = '+';
             ViewData["firstNumber"] = firstNumber;
             ViewData["secondNumber"] = secondNumber;
@@ -24,6 +24,7 @@ namespace NetProject.Controllers
 
         [Route("{firstNumber:int}/{secondNumber:int:min(1)}")]
         public IActionResult Divide(int firstNumber, int secondNumber) {
+            ViewData["action"] = RouteData.Values["action"].ToString();
             ViewData["mark"] = '/';
             ViewData["firstNumber"] = firstNumber;
             ViewData["secondNumber"] = secondNumber;
